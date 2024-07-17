@@ -3,4 +3,6 @@
 
 pip3 install paddlepaddle
 pip3 install paddleocr 
-pip3 install matplotlib
+pip install matplotlib
+pip install opencv-python
+pip install nltk
