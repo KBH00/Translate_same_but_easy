@@ -55,7 +55,7 @@ def count_polysyllabic_words(words):
 def count_difficult_words(words, easy_word_list):
     return sum(1 for word in words if word.lower() not in easy_word_list)
 
-easy_words = set()  # Add your list of easy words here
+easy_words = set()  # Add list of easy words here
 
 def convert_to_grade_level(score, conversion_table):
     for threshold, grade in conversion_table:
