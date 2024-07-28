@@ -28,7 +28,6 @@ def get_readability_level(text):
 
 from transformers import pipeline
 from huggingface_hub import login
-login("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")
 
 import nltk
 
