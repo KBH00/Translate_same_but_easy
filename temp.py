@@ -45,7 +45,7 @@ def identify_complex_words(text, model, threshold=0.9):
 
     return complex_words
 
-unmasker = pipeline('fill-mask', model='meta-llama/Llama-2-7b')
+unmasker = pipeline('fill-mask', model='meta-llama/Llama-2-7b-chat-hf')
 
 def get_contextual_synonym(word, context, model, increase_complexity=True):
     masked_text = context.replace(word, '[MASK]')

@@ -6,14 +6,14 @@ def ocr_paddle(image_path):
     ocr = PaddleOCR(use_angle_cls=True, lang='en')
     result = ocr.ocr(image_path, cls=True)
 
-    for line in result:
-        print(line)
+    # for line in result:
+    #     print(line)
 
     image = cv2.imread(image_path)
 
     return result
 
-def print_ocr(result):
+def post_processing_ocr(result):
     boxes = []
     texts = []
     scores = []
@@ -26,7 +26,12 @@ def print_ocr(result):
             boxes.append(bbox)
             texts.append(text)
             scores.append(score)
-            print(f'Text: {text}, Score: {score}')
+            #print(f'Text: {text}, Score: {score}')
+    return texts, scores, boxes
+
+def ocr_main(image_path):
+    texts, scores, boxes = post_processing_ocr(ocr_paddle(image_path=image_path))
+    return texts
 
 import fitz 
 
@@ -36,4 +41,3 @@ def extract_text_from_pdf(file_path):
     for page in document:
         text += page.get_text("text")
     return text
-
