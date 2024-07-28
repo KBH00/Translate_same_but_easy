@@ -28,4 +28,12 @@ def print_ocr(result):
             scores.append(score)
             print(f'Text: {text}, Score: {score}')
 
-print_ocr(ocr_paddle("code1.png"))
+import fitz 
+
+def extract_text_from_pdf(file_path):
+    document = fitz.open(file_path)
+    text = ''
+    for page in document:
+        text += page.get_text("text")
+    return text
+

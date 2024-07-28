@@ -99,8 +99,8 @@ def calculate_readability(text):
 
 # Example text
 text = "They designed it to correct certain shortcomings in the Flesch Reading Ease Formula."
-
-# Calculate readability scores
-readability_scores = calculate_readability(text)
-for formula, score in readability_scores.items():
-    print(f"{formula}: {score}")
+def avg_readability(text):
+    readability_scores = calculate_readability(text)
+    for formula, score in readability_scores.items():
+        print(f"{formula}: {score}")
+avg_readability(text)
